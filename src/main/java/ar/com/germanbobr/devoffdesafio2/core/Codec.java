@@ -1,21 +1,19 @@
 package ar.com.germanbobr.devoffdesafio2.core;
 
 public class Codec {
-    private final MatrixBuilder matrixBuilder;
-
-    public Codec() {
-        matrixBuilder = new MatrixBuilder();
-    }
 
     public String encode(String message, int l) {
-        final CodingMatrix matrix = matrixBuilder.buildEncode(message, l);
-        final CodingMatrix transposed = matrix.transpose();
-        return transposed.getString();
+        int n = calculateN(message, l);
+        return CodingMatrix.ofString(message, n, l).transpose().toString();
     }
 
     public String decode(String message, int n) {
-        final CodingMatrix matrix = matrixBuilder.buildDecode(message, n);
-        final CodingMatrix transposed = matrix.transpose();
-        return transposed.getString();
+        int l = calculateN(message, n);
+        return CodingMatrix.ofString(message, n, l).transpose().toString();
+    }
+
+    private int calculateN(String text, int l) {
+        Double size = Math.ceil(Double.valueOf(text.length()) / Double.valueOf(l));
+        return size.intValue();
     }
 }

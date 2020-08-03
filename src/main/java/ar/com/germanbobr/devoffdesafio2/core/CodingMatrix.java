@@ -21,10 +21,26 @@ public class CodingMatrix {
         return new CodingMatrix(transposed, l, n);
     }
 
-    public String getString() {
-        StringBuilder sb = new StringBuilder(l*n);
+    public static CodingMatrix ofString(String text, int n, int l) {
+        text = StringUtil.fillBlanks(text, l*n);
+        String[] characters = text.split("");
+        String[][] matrix = new String[n][l];
+
         for(int i = 0; i<n; i++) {
             for(int j = 0; j < l; j++) {
+                matrix[i][j] = characters[i*l+j];
+            }
+        }
+
+        return new CodingMatrix(matrix, n, l);
+    }
+
+
+    public String toString() {
+        StringBuilder sb = new StringBuilder(l*n);
+
+        for(int i = 0; i<n; i++) {
+            for (int j = 0; j < l; j++) {
                 sb.append(matrix[i][j]);
             }
         }
