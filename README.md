@@ -1,3 +1,36 @@
+# Solución by @GermanBobr
+
+Disclaimer:
+La resolución general del algoritmo me llevó aproximadamente 1 hora para una primera versión funcionando.
+Tardé un poco más de tiempo configurando el framework y la parte rest. De todas maneras si me tocaba participar en serio, tenía previsto armar todo el boilerplate del fwk de antemano.
+
+Siendo que me tomé el tiempo de hacerlo tranqui en casa, refactoricé un poco del código chancho despues de la hora.
+Me rehuso a subir código chancho a mi github xD
+
+Así y todo, todo esto fue resuelto durante el stream, no es el tipo de cosas que suelo hacer con java, quizas este tipo de ejercicio se resolvía más bonito en python, pero bueno, aquí está.
+
+# Como ejecutar esta solucion
+
+## Levantando el server:
+
+### Con maven:
+```
+mvn spring-boot:run
+```
+
+### Con docker:
+```
+docker build -t devoff
+docker run -p 8080:8080 devoff
+```
+
+## Probando la solución
+Swagger disponible en: https://localhost:8080/swagger-ui.html
+
+Endpoints:
+* `POST /encode`
+* `POST /decode`
+
 ![](https://static-cdn.jtvnw.net/jtv_user_pictures/fb425ddf-5e67-4c84-9210-8065809675f7-profile_banner-480.png)
 
 # Desafío 2 - 02/08/2020
