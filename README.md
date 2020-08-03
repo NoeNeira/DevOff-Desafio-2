@@ -20,8 +20,7 @@ mvn spring-boot:run
 
 ### Con docker:
 ```
-docker build -t devoff
-docker run -p 8080:8080 devoff
+docker run -p 8080:8080 gbobr/devoff-desafio-2:latest
 ```
 
 ## Probando la solución
